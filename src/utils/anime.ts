@@ -5,6 +5,7 @@ import type { anime as animeType } from '@/types/types';
 const { BASEURL } = process.env;
 const anime = async (slug: string): Promise<animeType | undefined> => {
   const { data } = await axios.get(`${BASEURL}/anime/${slug}`);
+  console.log(data)
   const result = scrapeSingleAnime(data);
 
   return result;
